@@ -1,0 +1,59 @@
+#game {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+}
+
+.start {
+  @include transition(opacity 0.2s, visibility 0.2s);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__msg {
+    margin-top: -20%;
+    margin-bottom: 1.25em;
+    font-size: 1.25em;
+  }
+
+  &__btn {
+    background: $blue;
+    color: $white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.25em;
+    padding: .5em 1.5em;
+
+    &:active {
+      background: $dark-blue;
+    }
+  }
+}
+
+.countdown {
+  &__time {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: $red;
+  }
+}

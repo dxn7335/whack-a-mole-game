@@ -1,0 +1,56 @@
+.grid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__cell {
+    @include transition(background 0.25s);
+    position:relative;
+    display: flex;
+    flex: 32%;
+    align-items: center;
+    height: calc(100vh / 4.5);
+    background: $green;
+    border: 1px solid $border-gray;
+    cursor: pointer;
+
+    &:before {
+      content: ' ';
+      width: 70px;
+      height: 70px;
+      background: #1e1f1e;
+      border-radius: 50px;
+      margin: auto;
+    }
+
+    &:after {
+      @include transition(opacity 0.2s, transform 0.2s);
+      @include transform(translate(0, 20px));
+      position: absolute;
+      width: 100%;
+      content: '!';
+      font-weight: 700;
+      font-size: 2em;
+      color: $red;
+      text-align: center;
+      opacity: 0;
+    }
+
+    &.active-mole {
+      &:after {
+        @include transform(translate(0, 0px));
+        opacity: 1;
+      }
+
+      &:active {
+        background: $red;
+        &:after {
+          content: 'WHACK';
+        }
+      }
+    }
+  }
+}
