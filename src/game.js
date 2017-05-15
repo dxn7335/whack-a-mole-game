@@ -17,7 +17,7 @@ const seconds = 60;
 
 class Game {
   constructor(element) {
-    this.element = element; // DOM element
+    this.element = element; // DOM element used for reference
     this.gridElem = this.element.getElementsByClassName(identifiers.grid)[0];
     this.scoreElem = this.element.getElementsByClassName(identifiers.score)[0];
     this.countdownElem = this.element.getElementsByClassName(identifiers.countdown)[0];
@@ -34,6 +34,10 @@ class Game {
     };
   }
 
+  /**
+   *  @method: init
+   *  Renders grid cells (moles) and shows start screen
+   */
   init() {
     this.renderMoleCells();
     this.showStartScreen();
@@ -74,6 +78,12 @@ class Game {
     this.showStartScreen(false);
   }
 
+  /**
+   *  @method: resetGame
+   *  Toggle class to show start screen
+   *  If first time showing screen, will initialize start button
+   *  Else will add message text to show user their score after first game
+   */
   showStartScreen(initial = true) {
     if (initial) {
       const startBtn = this.startScreenElem.getElementsByClassName(identifiers.startBtn)[0];
@@ -85,6 +95,10 @@ class Game {
     this.startScreenElem.classList.add("show");
   }
 
+  /**
+   *  @method: hideStartScreen
+   *  Toggle class to hide start screen from view
+   */
   hideStartScreen() {
     this.startScreenElem.classList.remove("show");
   }
@@ -133,6 +147,7 @@ class Game {
   createMole(cellElem, index) {
     return new Mole(cellElem, index, identifiers.activeMole, () => this.onMoleWhack());
   }
+
 
   /**
    *  @method: triggerActiveMole
