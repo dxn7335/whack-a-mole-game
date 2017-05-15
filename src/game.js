@@ -13,7 +13,7 @@ const identifiers = {
   startBtn: "start__btn"
 }
 
-const seconds = 20;
+const seconds = 60;
 
 class Game {
   constructor(element) {
@@ -105,7 +105,6 @@ class Game {
   renderCountDown() {
     const countdownElem = this.element.getElementsByClassName(identifiers.countdown)[0];
     this.state.time = this.state.time - 1;
-    console.log(this.state.time);
     countdownElem.innerHTML = this.state.time;
   }
 
@@ -141,7 +140,6 @@ class Game {
    */
   triggerActiveMole() {
     const i = Math.floor(Math.random() * this.moles.length);
-    console.log(i, this.moles);
     this.moles[i].toggleActive();
   }
 
