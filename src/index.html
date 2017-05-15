@@ -9,15 +9,20 @@
 </head>
 <body>
   <div id="app">
-    <header class="header">
-      <h1>Whack A Mole</h1>
-    </header>
-    <section id="game">
-      <div class="grid"></div>
-      <p class="scorebox">
-        Score: <span class="score"></span>
-      </p>
-    </section>
+    <div id="whack-a-mole">
+      <header class="header">
+        <h1>Whack A Mole</h1>
+      </header>
+      <section id="game">
+        <p class="countdown">Time: <span class="countdown__time"></span></p>
+        <div class="grid"></div>
+        <p class="scorebox">Score: <span class="scorebox__score"></span> </p>
+        <div class="start show">
+          <p class="start__msg"></p>
+          <button class="start__btn" type="button">Start</button>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 </html>
