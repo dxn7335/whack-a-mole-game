@@ -7,5 +7,6 @@ Made using:
 - Babel
 
 Startup
+- Run `npm install`
 - Run `npm start`
 - View on `http://localhost:3000`
