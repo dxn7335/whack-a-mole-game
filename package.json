@@ -4,8 +4,7 @@
   "description": "Simple Whack a Mole Game",
   "scripts": {
     "start": "webpack-dev-server --hot --config webpack.config.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base build/",
-    "build": "webpack",
-    "build:watch": "webpack --watch",
+    "build": "webpack"
   },
   "babel": {
     "presets": [

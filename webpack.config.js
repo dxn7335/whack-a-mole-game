@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractText.extract('style-loader', 'css-loader!sass-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2($|\?))$/,
@@ -55,8 +55,10 @@ module.exports = {
       filename: "index.html",
       template: './src/index.html'
     }),
-    new ExtractText('[name].css')
+    new ExtractTextPlugin('[name].css')
   ],
+
+  devtool: 'eval-source-map',
 
   devServer: {
     inline: true,
