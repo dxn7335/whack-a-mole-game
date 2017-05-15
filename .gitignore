@@ -1,0 +1,12 @@
+# Compiled addons
+build
+dist
+
+# .DS_Store
+.DS_Store
+
+# Node modules
+node_modules
+
+# Logs
+*.log
